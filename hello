@@ -1,48 +1,10 @@
 #!/home/ryo1/anaconda3/bin/python3
 
 import sys
-
-"""一日目か二日目
-print("hello")
-print(3.14, 3.14e+2)
-name = "坂巻"
-money = 1000
-#print("{}の所持金:{}yen".format(name,money))
-height = [123,124,125,126]
-for h in height:
-    print(h)
-fruits = ["a", "b", "c", "d", "e" ]
-print("0番目から2番目の要素: ", fruits[0:3])
-
-#point = [0,1,2,3,4,]
-#for p in point:
-#    if point % 2 == 0:
-#        print(p)
-"""
-"""三回目
-#print(sys.argv)
-#print(float(sys.argv[1]) + float(sys.argv[2]))
-x = 0.0
-for n in sys.argv[1:]:
-    x += float(n)
-print(x)
-
-sei, hu, zero = 0,0,0
-　
-x = float(sys.argv[1:])
-if x > 0.0:
-    #print("正")
-    sei += 1
-elif x < 0.0:
-    #print("負")
-    hu += 1
-else:
-    #print("ZERO")
-    zero += 1
-#print("正"sei"〇"zero"負"hu)"""
-ans = 0.0
+ans = 0 #もともと0.0だったのを0に変更
 for line in sys.stdin:
-    #word = line.strip()
-    #print(word + "を標準入力から読んだよ")
-    ans += float(line)
+    try:
+        ans += int(line)   #intは文字列を整数に（失敗すると例外発生）            
+    except:
+        ans += float(line)
 print(ans)
